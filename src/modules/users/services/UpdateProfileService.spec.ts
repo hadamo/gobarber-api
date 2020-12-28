@@ -29,12 +29,12 @@ describe('UpdateProfileService', () => {
 
         const updatedUser = await updateProfile.execute({
             user_id: user.id,
-            name: 'Ciclano de Tal',
-            email: 'ciclano@example.com',
+            name: 'Sicrano de Tal',
+            email: 'sicrano@example.com',
         });
 
-        expect(updatedUser.name).toBe('Ciclano de Tal');
-        expect(updatedUser.email).toBe('ciclano@example.com');
+        expect(updatedUser.name).toBe('Sicrano de Tal');
+        expect(updatedUser.email).toBe('sicrano@example.com');
     });
 
     it('should not be able to update the profile of non-existing user', async () => {
@@ -63,7 +63,7 @@ describe('UpdateProfileService', () => {
         await expect(
             updateProfile.execute({
                 user_id: user.id,
-                name: 'Ciclano de Tal',
+                name: 'Sicrano de Tal',
                 email: 'fulano@example.com',
             }),
         ).rejects.toBeInstanceOf(AppError);
@@ -78,8 +78,8 @@ describe('UpdateProfileService', () => {
 
         const updatedUser = await updateProfile.execute({
             user_id: user.id,
-            name: 'Ciclano de Tal',
-            email: 'ciclano@example.com',
+            name: 'Sicrano de Tal',
+            email: 'sicrano@example.com',
             old_password: '123456',
             password: '123123',
         });
@@ -97,8 +97,8 @@ describe('UpdateProfileService', () => {
         await expect(
             updateProfile.execute({
                 user_id: user.id,
-                name: 'Ciclano de Tal',
-                email: 'ciclano@example.com',
+                name: 'Sicrano de Tal',
+                email: 'sicrano@example.com',
                 password: '123123',
             }),
         ).rejects.toBeInstanceOf(AppError);
@@ -114,8 +114,8 @@ describe('UpdateProfileService', () => {
         await expect(
             updateProfile.execute({
                 user_id: user.id,
-                name: 'Ciclano de Tal',
-                email: 'ciclano@example.com',
+                name: 'Sicrano de Tal',
+                email: 'sicrano@example.com',
                 old_password: 'wrong_password',
                 password: '123123',
             }),

@@ -5,7 +5,7 @@
     "license": "MIT",
     "scripts": {
         "build": "tsc",
-        "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
+        "dev:server": "ts-node-dev -r tsconfig-paths/register --trace-warnings --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
         "start": "ts-node  src/shared/infra/http/server.ts",
         "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
         "test": "jest"
@@ -34,8 +34,10 @@
     "dependencies": {
         "@typescript-eslint/eslint-plugin": "^3.10.1",
         "@typescript-eslint/parser": "^3.10.1",
+        "aws-sdk": "^2.818.0",
         "bcryptjs": "^2.4.3",
         "celebrate": "^13.0.4",
+        "class-transformer": "^0.3.1",
         "cors": "^2.8.5",
         "date-fns": "^2.16.0",
         "dotenv": "^8.2.0",

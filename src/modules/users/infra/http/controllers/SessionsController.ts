@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
+import { classToClass } from 'class-transformer';
 
 import AuthenticateUserService from '@modules/users/services/AuthenticateUserService';
-import IResponseUserDTO from '@modules/users/dtos/IResponseUserDTO';
 
 export default class SessionsController {
     async create(request: Request, response: Response): Promise<Response> {
@@ -15,10 +15,6 @@ export default class SessionsController {
             password,
         });
 
-        const userResponse: IResponseUserDTO = user;
-
-        delete userResponse.password;
-
-        return response.json({ user, token });
+        return response.json({ user: classToClass(user), token });
     }
 }
